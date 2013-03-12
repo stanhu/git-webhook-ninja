@@ -1,2 +1,3 @@
 settings.py
 git_commit_notifier_config.py
+*.pyc
