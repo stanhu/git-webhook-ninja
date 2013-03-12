@@ -36,28 +36,28 @@ git-webhook-ninja performs the following sequence of actions:
 
 ## Installing
 
-1.  Create a virtual environment (see https://python-guide.readthedocs.org/en/latest/dev/virtualenvs/).
+1) Create a virtual environment (see https://python-guide.readthedocs.org/en/latest/dev/virtualenvs/).
 
-2.  Install the requirements:
+2) Install the requirements:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3.  Copy settings.py.example to settings.py:
+3) Copy settings.py.example to settings.py:
 
 ```bash
 cp settings.py.example settings.py
 ```
 
-4.  Edit settings.py and configure the local interface and ports.  For example, to run the
+4) Edit settings.py and configure the local interface and ports.  For example, to run the
 server on all interfaces and port 8888, set the configuration variables as such:
 ```
 LISTEN_IP = '0.0.0.0'
 LISTEN_PORT = 8888
 ```
 
-5.  git-commit-notifier requires a configuration file to run.  This program supports the ability
+5) git-commit-notifier requires a configuration file to run.  This program supports the ability
 to map custom configuration files per repository names.  Copy git_commit_notifier_config.py.example
 to git_commit_notifier_config.py:
 
@@ -65,10 +65,10 @@ to git_commit_notifier_config.py:
 cp git_commit_notifier_config.py.example git_commit_notifier_config.py
 ```
 
-6. Set the full pathname of GIT_COMMIT_NOTIFIER_BIN in git_commit_notifier_config.py.
+6) Set the full pathname of GIT_COMMIT_NOTIFIER_BIN in git_commit_notifier_config.py.
 
 
-7.  For each repository name, add an entry git_commit_notifier_config.py to the REPO_CONFIG_MAP
+7) For each repository name, add an entry git_commit_notifier_config.py to the REPO_CONFIG_MAP
  dictionary.  For example, if you had a repository named 'project-A' and 'project-B', you might have:
 
 ```
@@ -82,7 +82,7 @@ NOTE: This configuration file assumes that repository names are unique across Gi
 If you do not want to make that assumption, you can create a new handler in settings.py
 to do this.
 
-8.  Configure the destination path for your repositories by editing the 'local_repo_dir'
+8. Configure the destination path for your repositories by editing the 'local_repo_dir'
 variables in the PROVIDERS dictionary.  For example, if you wish to have Git repositories locally
 cloned in '/home/builder/github', you would edit the line:
 
@@ -97,7 +97,7 @@ have the same repository name on different providers.
 IMPORTANT: Be sure that the user that will be running the program has
 permissions to create directories in each of the local repository directories.
 
-9.  Run the main program:
+9. Run the main program:
 
 ```
 python main.py
@@ -105,7 +105,7 @@ python main.py
 
 Your server should now be ready to receive WebHook requests.
 
-10.  Configure your GitHub and/or Bitbucket repositories to send WebHook requests to your
+10. Configure your GitHub and/or Bitbucket repositories to send WebHook requests to your
 URL.  For example, if your hostname is mydomain.com and runs on port 8888, the URL would be:
 
 ```
