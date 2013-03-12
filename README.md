@@ -1,6 +1,6 @@
 # Git WebHook Ninja
 
-__by Stan Hu (stanhu at gmail.com)
+__by Stan Hu (stanhu at gmail.com)__
 
 git-webhook-ninja (for lack of a better name) is an extensible, post-receive
 Git Web server that automatically handles GitHub and Bitbucket WebHook
@@ -26,7 +26,7 @@ git-webhook-ninja performs the following sequence of actions:
 4. Runs 'git pull' in the current repository.
 
 5. Determines the starting and ending SHA ID of the Git commits from the payload data.
-   Runs 'git-commit-notifier' for the before and after SHA ID of the request.
+   Runs 'git-commit-notifier' with the proper parameters.
 
 ## Requirements
 
