@@ -5,12 +5,6 @@
 import os
 import webhook_handler
 
-# Change this to the absolute path of your git-commit-notifier executable.
-GIT_COMMIT_NOTIFIER_BIN = '/usr/local/git-commit-notifier/local-run.rb'
-
-# GIT_COMMIT_NOTIFIER_BIN needs to be defined first
-from email_handler import git_commit_notifier_handler
-
 DEBUG = True
 LISTEN_IP = '0.0.0.0'
 LISTEN_PORT = 8888

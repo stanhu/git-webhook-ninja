@@ -21,7 +21,7 @@ def git_commit_notifier_handler(webhook_data):
                   (webhook_data.get_before_sha(),
                    webhook_data.get_after_sha(),
                    webhook_data.get_ref(),
-                   GIT_COMMIT_NOTIFIER_BIN,
+                   git_commit_notifier_config.GIT_COMMIT_NOTIFIER_BIN,
                    config_file))
     else:
         print('No config file found for repo %s' %

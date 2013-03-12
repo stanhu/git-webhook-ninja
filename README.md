@@ -57,9 +57,6 @@ LISTEN_IP = '0.0.0.0'
 LISTEN_PORT = 8888
 ```
 
-4.  If you are using git-commit-notifier, set the full pathname of GIT_COMMIT_NOTIFIER_BIN in
-settings.py.
-
 5.  git-commit-notifier requires a configuration file to run.  This program supports the ability
 to map custom configuration files per repository names.  Copy git_commit_notifier_config.py.example
 to git_commit_notifier_config.py:
@@ -68,7 +65,10 @@ to git_commit_notifier_config.py:
 cp git_commit_notifier_config.py.example git_commit_notifier_config.py
 ```
 
-6.  For each repository name, add an entry git_commit_notifier_config.py to the REPO_CONFIG_MAP
+6. Set the full pathname of GIT_COMMIT_NOTIFIER_BIN in git_commit_notifier_config.py.
+
+
+7.  For each repository name, add an entry git_commit_notifier_config.py to the REPO_CONFIG_MAP
  dictionary.  For example, if you had a repository named 'project-A' and 'project-B', you might have:
 
 ```
@@ -82,7 +82,7 @@ NOTE: This configuration file assumes that repository names are unique across Gi
 If you do not want to make that assumption, you can create a new handler in settings.py
 to do this.
 
-7.  Configure the destination path for your repositories by editing the 'local_repo_dir'
+8.  Configure the destination path for your repositories by editing the 'local_repo_dir'
 variables in the PROVIDERS dictionary.  For example, if you wish to have Git repositories locally
 cloned in '/home/builder/github', you would edit the line:
 
@@ -97,7 +97,7 @@ have the same repository name on different providers.
 IMPORTANT: Be sure that the user that will be running the program has
 permissions to create directories in each of the local repository directories.
 
-8.  Run the main program:
+9.  Run the main program:
 
 ```
 python main.py
@@ -105,7 +105,7 @@ python main.py
 
 Your server should now be ready to receive WebHook requests.
 
-9.  Configure your GitHub and/or Bitbucket repositories to send WebHook requests to your
+10.  Configure your GitHub and/or Bitbucket repositories to send WebHook requests to your
 URL.  For example, if your hostname is mydomain.com and runs on port 8888, the URL would be:
 
 ```
