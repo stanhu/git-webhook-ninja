@@ -1,4 +1,5 @@
 import git_commit_notifier_config
+import os
 
 def load_config(provider, repository_name):
     """
