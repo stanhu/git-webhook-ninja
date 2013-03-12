@@ -29,6 +29,6 @@ PROVIDERS['bitbucket'] = {
     'whitelist_ips' : ['63.246.22.222', '207.223.240.181',
                        '207.223.240.182'],
     'local_repo_dir' : '<EDIT LOCAL BITBUCKET DIRECTORY>',
-    'ssh_account' : 'git@bitbucket.com',
+    'ssh_account' : 'git@bitbucket.org',
     'post_receive_handler' : git_commit_notifier_handler
 }
