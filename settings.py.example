@@ -4,6 +4,7 @@
 
 import os
 import webhook_handler
+from email_handler import git_commit_notifier_handler
 
 DEBUG = True
 LISTEN_IP = '0.0.0.0'
