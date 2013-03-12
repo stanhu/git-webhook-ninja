@@ -29,7 +29,7 @@ class WebHookData():
         return self.after
 
     def get_ref(self):
-        return self.ref
+        return self.ref_name
 
     def is_tag(self):
         return (self.ref_name.find('refs/tags/') == 0)
