@@ -54,7 +54,7 @@ def parse_bitbucket_data(data):
         webhook_data.repo_url = "%s:%s/%s.git" % \
             (settings.PROVIDERS['bitbucket']['ssh_account'],
              repo_data['owner'], repo_data['slug'])
-        webhook_data.ref_name = 'ref/heads/%s' % commit['branch']
+        webhook_data.ref_name = 'refs/heads/%s' % commit['branch']
         webhook_data.branch_name = commit['branch']
         if webhook_data.before is None:
             webhook_data.before = commit['raw_node'] + "^1"
