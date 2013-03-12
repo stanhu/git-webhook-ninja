@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from flask import Flask, request
 from webhook_handler import WebHookData, post_receive_handler
 
