@@ -60,7 +60,6 @@ def git_clone_to_local(dest_directory, webhook_data):
         git.checkout(webhook_data.branch_name)
 
     print(git.pull())
-    print(git.diff(webhook_data.before, webhook_data.after))
     print webhook_data.before, webhook_data.after
 
 def post_receive_handler(provider_info, webhook_data):
