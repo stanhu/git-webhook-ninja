@@ -56,6 +56,9 @@ def git_clone_to_local(dest_directory, webhook_data):
     if branch_exists is False and not webhook_data.is_tag():
         print(git.checkout('-b', webhook_data.branch_name,
                            'origin/%s' % webhook_data.branch_name))
+    elif branch_exists:
+        git.checkout(webhook_data.branch_name)
+
     print(git.pull())
     print(git.diff(webhook_data.before, webhook_data.after))
     print webhook_data.before, webhook_data.after
