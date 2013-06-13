@@ -14,7 +14,8 @@ PROVIDERS = {}
 
 PROVIDERS['github'] = {
     'whitelist_ips' : ['207.97.227.224/27', '173.203.140.192/27',
-                       '204.232.175.64/27', '72.4.117.96/27'],
+                       '204.232.175.64/27', '72.4.117.96/27',
+                       '192.30.252.0/22', '204.232.175.64/27'],
     'local_repo_dir' : '<EDIT LOCAL GITHUB DIRECTORY>',
     'ssh_account' : 'git@github.com',
     'post_receive_handler' : git_commit_notifier_handler
