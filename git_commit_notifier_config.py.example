@@ -5,6 +5,13 @@
 # Change this to the absolute path of your git-commit-notifier executable.
 GIT_COMMIT_NOTIFIER_BIN = '/usr/local/git-commit-notifier/local-run.rb'
 
+# Set this to the default configuration for git-commit-notifier.  If you don't
+# want to specify project-specific configurations, you can leave
+# REPO_CONFIG_MAP blank.
+DEFAULT_CONFIG = '/aclima/it-tools/config/all-config.yml'
+
+# A dictionary mapping the repository name (case sensitive) to the project file.
+# DEFAULT_CONFIG is used if the project name is not specified here.
 REPO_CONFIG_MAP = {
     'project-A' : '/home/user/git-commit-notifier-project-A.yml',
     'project-B' : '/home/user/git-commit-notifier-project-B.yml'
