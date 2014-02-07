@@ -54,7 +54,16 @@ def parse_bitbucket_data(data):
     data_by_branch = {}
 
     for commit in data['commits']:
-        webhook_data = data_by_branch.setdefault(commit['branch'],
+        branch_name = commit.get('branch')
+
+        # In BitBucket, a branch value can be null. This can happen if a push
+        # affects multiple branches (a variable 'branches' appears and the
+        # 'branch' is set to empty). It also appears to happen when multiple
+        # commits are pushed.
+        if not branch_name:
+            continue
+
+        webhook_data = data_by_branch.setdefault(branch_name,
                                                  WebHookData('bitbucket'))
         repo_data = data['repository']
         webhook_data.repo_name = repo_data['slug']
@@ -62,7 +71,7 @@ def parse_bitbucket_data(data):
             (settings.PROVIDERS['bitbucket']['ssh_account'],
              repo_data['owner'], repo_data['slug'])
         webhook_data.ref_name = 'refs/heads/%s' % commit['branch']
-        webhook_data.branch_name = commit['branch']
+        webhook_data.branch_name = branch_name
         if webhook_data.before is None:
             webhook_data.before = commit['raw_node'] + "^1"
         webhook_data.after = commit['raw_node']
